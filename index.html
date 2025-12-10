@@ -241,18 +241,115 @@
                 </div>
 
                 </div>
-            </div>
+                <div class="col-lg-4 mb-4">
+  <div class="card p-3 shadow-sm chart-card">
 
-           </div>
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <h6 class="fw-bold">Jobs by Category</h6>
+      <button class="btn btn-light btn-sm border"><i class="bi bi-arrow-repeat"></i></button>
+    </div>
 
+    <div class="pie-wrapper">
+        <div id="pie-chart"></div>
+
+        <div class="legend-box">
+            <div class="legend-item"><span class="dot color1"></span> Development <span class="percent">35%</span></div>
+            <hr>
+            <div class="legend-item"><span class="dot color2"></span> Design <span class="percent">25%</span></div>
+            <hr>
+            <div class="legend-item"><span class="dot color3"></span> Marketing <span class="percent">20%</span></div>
+            <hr>
+            <div class="legend-item"><span class="dot color4"></span> Product <span class="percent">10%</span></div>
+            <hr>
+            <div class="legend-item"><span class="dot color5"></span> Others <span class="percent">10%</span></div>
+            <hr>
         </div>
+    </div>
+
+  </div>
+</div>
 
 
 
+                </div>
 
-       <script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+            <!--Tabel--> 
+            <div class="card shadow-sm border-0 rounded-4 mx-4 p-3">
+           <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="fw-bold">Recent Job Posts</h6>
+            <div class="d-flex align-items-center gap-2">
+               <div class="search-box d-flex align-items-center">
+                    <i class="bi bi-search me-2"></i>
+                    <input type="text" placeholder="Search" class="form-control search-input">
+                </div>
+              <button class="btn btn-light border">
+                   <i class="bi bi-funnel"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table align-middle recent-table">
+              <thead>
+                <tr>
+                  <th> <input type="checkbox"></th>
+                  <th> Job Title</th>
+                  <th>Company</th>
+                  <th>Type</th>
+                  <th>Location</th>
+                  <th>Applicants</th>
+                  <th>status</th>
+                  <th>Posted Date</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td class="fw-semibold">Frontend Developer</td>
+                  <td><img src="assets/images/Shopify.jpeg" class="company-logo me-2 ">Shopify</td>
+                  <td>Full-Time</td>
+                  <td>Remote</td>
+                  <td>45</td>
+                  <td><span class="status-pill active-pill"> Active</span></td>
+                  <td> Oct 30,2025</td>
+                  <td><i class="bi bi-three-dots"></i></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td class="fw-semibold">UI/UX Designer</td>
+                  <td><img src="assets/images/slack .png" class="company-logo me-2 ">Slack</td>
+                  <td>Full-Time</td>
+                  <td>New York</td>
+                  <td>28</td>
+                  <td><span class="status-pill pending-pill"> Pending</span></td>
+                  <td> Oct 30,2025</td>
+                  <td><i class="bi bi-three-dots"></i></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td class="fw-semibold">Product Manager</td>
+                  <td><img src="assets/images/slack .png" class="company-logo me-2 ">Strip</td>
+                  <td>Full-Time</td>
+                  <td>Remote</td>
+                  <td>35</td>
+                  <td><span class="status-pill active-pill"> Active</span></td>
+                  <td> Oct 30,2025</td>
+                  <td><i class="bi bi-three-dots"></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+  </div>
+
+       
+
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="https://code.highcharts.com/themes/adaptive.js"></script>
        

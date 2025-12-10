@@ -32,7 +32,7 @@ Highcharts.chart('application-chart', {
     },
     tooltip: {
         borderRadius: '10',
-        valueSuffix: ' (3500 Job Applicants)'
+        valueSuffix: ' (Applicants)'
     },
     plotOptions: {
         column: {
@@ -45,20 +45,60 @@ Highcharts.chart('application-chart', {
             name: 'Applicants',
             data: [3873, 2800, 1290, 6430, 5400, 3430]
         },
-        {
-            name: 'Total user',
-            data: [4532, 1400, 1000, 14050, 1950, 11350]
-        }
+       
     ],
+    //responsive
     responsive:{
         rules:[{
             condition:{
                 maxWidth:500
             },
             chartOptions:{
-                legend:{enabled:false}
+                legend:{enabled:false},
+                xAxis: {
+                    labels: {
+                        style: { fontSize: '10px' }
+                    }
+                },
+                 yAxis: {
+                    labels: {
+                        style: { fontSize: '10px' }
+                    }
+                }
+
+            
             }
 
         }]
     }
 });
+
+Highcharts.chart('pie-chart', {
+    chart: { type: 'pie', height: 250 },
+    title: { text: '' },
+    credits: { enabled: false },
+    exporting: { enabled: false },
+
+    plotOptions: {
+        pie: {
+            innerSize: '70%',   // BIG donut like image 2
+            borderWidth: 0,
+            dataLabels: { enabled: false }
+        }
+    },
+
+    colors: ['#4b4bd4', '#7b7be8', '#a3a3f0', '#5b5bc5', '#6b6be2'],
+
+    series: [{
+        data: [
+            ['Development', 35],
+            ['Design', 25],
+            ['Marketing', 20],
+            ['Product', 10],
+            ['Others', 10]
+        ]
+    }]
+});
+
+
+

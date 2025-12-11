@@ -1,19 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root {
+            --primary-color: #4338ca; /* Indigo/Purple */
+            --primary-light: #e0e7ff;
+            --sidebar-width: 260px;
+            --bg-light: #f8f9fa;
+            --text-secondary: #64748b;
+        }
+
 body{
-    background: #f7f8fc;
-    font-family:Arial, Helvetica, sans-serif
+     font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+
 }
-html, body {
-    overflow-x: hidden !important;
-}
+
 .sidebar{
-    width: 260px;
-    min-height: 100vh;
+    width: var(--sidebar-width);
+    height: 100vh;
     background: #ffff;
     border-right: 1px solid #eee;
     padding-top: 20px;
     box-shadow: 0 2px 8px rgba(15,15,25, 0.02);
 
 }
+.sidebar.collapsed {
+    left: -260px; /* Move the sidebar out of the view */
+}
+
+.brand {
+    display: flex;
+    justify-content: space-between; /* Align the button and logo in the same row */
+    align-items: center;
+}
+
 .brand-icon{
     width: 36px;
     height: 36px;
@@ -31,7 +50,21 @@ html, body {
   border-radius: 8px;
   padding: 8px 10px;
   font-size: 14px;
+position: relative;
 }
+/* Purple Line on Active */
+.sidebar-menu .nav-link.active::before {
+  content: "";
+  position: absolute;
+  left: -13px;          
+  top: 50%;
+  transform: translateY(-50%); 
+  height: 60%;              
+  width: 4px;
+  background-color: #3b3ab0;
+ border-radius: 0px 10px 10px 0px;
+}
+
 .sidebar-menu .nav-link i {
   font-size: 16px;
   width: 20px;
@@ -42,7 +75,7 @@ html, body {
   background: #eef1ff;
   color: #3b3ab0;
   font-weight: 600;
-  box-shadow: inset 2px 0 0 #5b5be8;
+  
 }
 
 
@@ -254,6 +287,7 @@ border-bottom: 1px solid #eee;
         z-index: 2000;
         transition: left .3s ease;
     }
+    
 
     .sidebar.show {
         left: 0;

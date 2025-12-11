@@ -60,7 +60,7 @@ position: relative;
   top: 50%;
   transform: translateY(-50%); 
   height: 60%;              
-  width: 4px;
+  width: 5px;
   background-color: #3b3ab0;
  border-radius: 0px 10px 10px 0px;
 }

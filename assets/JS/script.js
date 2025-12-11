@@ -1,7 +1,24 @@
-//side bar
-document.getElementById("toggleSidebar")?.addEventListener("click", function () {
-    document.querySelector(".sidebar").classList.toggle("open");
+// SIDEBAR MOBILE TOGGLE
+const menuBtn = document.getElementById("menu-toggle");
+const sidebar = document.querySelector(".sidebar");
+
+// overlay add
+let overlay = document.createElement("div");
+overlay.classList.add("overlay");
+document.body.appendChild(overlay);
+
+menuBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("show");
+    overlay.classList.toggle("show");
 });
+
+// Click outside to close
+overlay.addEventListener("click", () => {
+    sidebar.classList.remove("show");
+    overlay.classList.remove("show");
+});
+
+    
 //
 Highcharts.chart('application-chart', {
     chart: {

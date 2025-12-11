@@ -2,7 +2,7 @@
 document.getElementById("toggleSidebar")?.addEventListener("click", function () {
     document.querySelector(".sidebar").classList.toggle("open");
 });
-//highcharts
+//
 Highcharts.chart('application-chart', {
     chart: {
         type: 'column'

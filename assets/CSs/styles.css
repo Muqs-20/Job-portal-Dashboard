@@ -53,7 +53,7 @@ body {
 
 .sidebar.collapsed .nav-link {
     justify-content: center !important;
-    padding-left: 0 !important;
+   
 }
 
 .sidebar.collapsed .nav-link i {

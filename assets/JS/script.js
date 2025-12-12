@@ -19,7 +19,11 @@ overlay.addEventListener("click", () => {
 });
 
     
-//
+//collapsed
+document.getElementById("collapse-btn").addEventListener("click", function () {
+    document.querySelector(".sidebar").classList.toggle("collapsed");
+});
+//highcharts
 Highcharts.chart('application-chart', {
     chart: {
         type: 'column'

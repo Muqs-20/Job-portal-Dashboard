@@ -24,7 +24,9 @@ body{
 
 }
 .sidebar.collapsed {
-    left: -260px; /* Move the sidebar out of the view */
+     width: 80px; 
+     overflow:hidden;     
+    transition: 0.3s ease;
 }
 
 .brand {
@@ -56,11 +58,11 @@ position: relative;
 .sidebar-menu .nav-link.active::before {
   content: "";
   position: absolute;
-  left: -13px;          
+  left: -18px;          
   top: 50%;
   transform: translateY(-50%); 
-  height: 60%;              
-  width: 5px;
+  height: 70%;              
+  width: 6px;
   background-color: #3b3ab0;
  border-radius: 0px 10px 10px 0px;
 }

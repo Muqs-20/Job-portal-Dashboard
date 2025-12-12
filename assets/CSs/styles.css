@@ -1,34 +1,47 @@
+/* =========================
+   IMPORTS & VARIABLES
+========================= */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root {
-            --primary-color: #4338ca; /* Indigo/Purple */
-            --primary-light: #e0e7ff;
-            --sidebar-width: 260px;
-            --bg-light: #f8f9fa;
-            --text-secondary: #64748b;
-        }
-
-body{
-     font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-light);
-            overflow-x: hidden;
-
+    --primary-color: #4338ca; 
+    --primary-light: #e0e7ff;
+    --sidebar-width: 260px;
+    --bg-light: #f8f9fa;
+    --text-secondary: #64748b;
+    --sidebar-bg: #fff;
+    --sidebar-border: #eee;
+    --nav-hover-bg: #fafbff;
+    --active-line-color: #3b3ab0;
 }
 
-.sidebar{
+/* =========================
+   GLOBAL STYLES
+========================= */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    overflow-x: hidden;
+    margin: 0;
+}
+
+/* =========================
+   SIDEBAR STYLES
+========================= */
+.sidebar {
     width: var(--sidebar-width);
-   
-    background: #ffff;
-    border-right: 1px solid #eee;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
     padding-top: 20px;
-    box-shadow: 0 2px 8px rgba(15,15,25, 0.02);
-     transition: 0.3s ease;
-
-}
-.sidebar.collapsed {
-     width: 80px; 
-     overflow:hidden;     
+    box-shadow: 0 2px 8px rgba(15, 15, 25, 0.02);
     transition: 0.3s ease;
 }
+
+.sidebar.collapsed {
+    width: 80px;
+    overflow: hidden;
+}
+
 .sidebar.collapsed span,
 .sidebar.collapsed h6,
 .sidebar.collapsed h5,
@@ -37,128 +50,154 @@ body{
 .sidebar.collapsed .brand h5 {
     display: none !important;
 }
+
 .sidebar.collapsed .nav-link {
     justify-content: center !important;
     padding-left: 0 !important;
 }
+
 .sidebar.collapsed .nav-link i {
     margin-right: 0 !important;
+    font-size: 1.3rem;
+    opacity: 0.9;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
 .sidebar.collapsed .brand {
     justify-content: center !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
 }
+
+.sidebar.collapsed .brand #collapse-btn {
+    margin-top: 16px;
+}
+
 .sidebar.collapsed #collapse-btn i {
     transform: rotate(180deg);
     transition: 0.3s ease;
 }
-.sidebar.collapsed .nav-link i {
-    font-size: 1.3rem;  
-    opacity: 0.9;
-    text-shadow: 0px 0px 2px rgba(0,0,0,0.2);
-}
-.sidebar.collapsed .brand {
-    flex-direction: column;  
-    align-items: center;
-    justify-content: center;
-    gap: 0.3rem;
-}
-.sidebar.collapsed .brand #collapse-btn {
-    margin-top: 16px; 
-}
 
+/* =========================
+   BRAND
+========================= */
 .brand {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
 }
 
-.brand-icon{
+.brand-icon {
     width: 36px;
     height: 36px;
     background: #f1f4f4;
-    color:#4b4bd4;
+    color: #4b4bd4;
     font-size: 18px;
 }
+
+/* =========================
+   SIDEBAR MENU
+========================= */
 .sidebar h6 {
-  font-size: 12px;
-  letter-spacing: 0.2px;
-  margin-bottom: 8px;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    margin-bottom: 8px;
 }
+
 .sidebar-menu .nav-link {
-  color: #586069;
-  border-radius: 8px;
-  padding: 8px 10px;
-  font-size: 14px;
-position: relative;
-}
-/* Purple Line on Active */
-.sidebar-menu .nav-link.active::before {
-  content: "";
-  position: absolute;
-  left: -18px;          
-  top: 50%;
-  transform: translateY(-50%); 
-  height: 70%;              
-  width: 6px;
-  background-color: #3b3ab0;
- border-radius: 0px 10px 10px 0px;
+    color: #586069;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 14px;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .sidebar-menu .nav-link i {
-  font-size: 16px;
-  width: 20px;
-  text-align: center;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
 }
-.sidebar-menu .nav-link.active,
-.sidebar-menu .nav-link.active:hover {
-  background: #eef1ff;
-  color: #3b3ab0;
-  font-weight: 600;
-  
-}
-
 
 .sidebar-menu .nav-link:hover {
-  background: #fafbff;
-  color: #3b3ab0;
+    background: var(--nav-hover-bg);
+    color: var(--active-line-color);
 }
 
+.sidebar-menu .nav-link.active,
+.sidebar-menu .nav-link.active:hover {
+    background: #eef1ff;
+    color: var(--active-line-color);
+    font-weight: 600;
+}
 
+.sidebar-menu .nav-link.active::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 70%;
+    width: 6px;
+    background-color: var(--active-line-color);
+    border-radius: 0 10px 10px 0;
+}
+
+/* =========================
+   UPGRADE BOX
+========================= */
 .upgrade-box {
-  background: linear-gradient(180deg, #5b5be8 0%, #6f6ff8 100%);
-  border-radius: 12px;
-  color: #fff;
+    background: linear-gradient(180deg, #5b5be8 0%, #6f6ff8 100%);
+    border-radius: 12px;
+    color: #fff;
 }
 
+/* =========================
+   TOP NAVBAR
+========================= */
 .top-navbar {
     background: #fff;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--sidebar-border);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-
+/* =========================
+   SEARCH BOX
+========================= */
 .search-box {
-    background: #f8f9fc;
-    padding: 6px 12px;
+    background: #f5f5f5;
+    padding: 4px 10px;
     border-radius: 10px;
     border: 1px solid #e5e8f0;
+    display: flex;
+    align-items: center;
 }
-.search-input {
+
+.search-box .form-control {
     border: none;
+    padding: 4px 6px;
+    height: 30px;
+    font-size: 14px;
     background: transparent;
-    width: 200px;
 }
+
 .search-box i {
+    font-size: 14px;
     color: #777;
 }
+
 .search-input:focus {
     outline: none;
     box-shadow: none;
 }
 
+/* =========================
+   SHORTCUTS & BADGES
+========================= */
 .shortcut-key {
     background: #fff;
     padding: 2px 6px;
@@ -177,19 +216,36 @@ position: relative;
     right: -2px;
 }
 
+.badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+/* =========================
+   USER INFO
+========================= */
 .user-img {
     width: 40px;
     height: 40px;
     object-fit: cover;
 }
+
 .user-name {
     font-size: 14px;
-    color:black;
+    color: black;
 }
+
+/* =========================
+   DASHBOARD HEADER
+========================= */
 .dashboard-header h4 {
     font-size: 1.35rem;
 }
 
+/* =========================
+   CARDS
+========================= */
 .stats-card {
     transition: 0.2s ease;
     cursor: pointer;
@@ -199,27 +255,28 @@ position: relative;
     background: #f9fafb;
     border-color: #e5e7eb;
 }
-.icon-box{
+
+.icon-box {
     height: 42px;
     width: 42px;
     border-radius: 12px;
     background: #f3e8ff;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
-.icon-box i{
+
+.icon-box i {
     font-size: 1.3rem;
-     color: #3044fd;
+    color: #3044fd;
 }
-.badge {
-    font-size: 0.75rem;
-    padding: 4px 8px;
-    border-radius: 8px;
-}
+
+/* =========================
+   CHARTS & LEGENDS
+========================= */
 .chart-card {
     border-radius: 14px;
-    border: 1px solid #eee;
+    border: 1px solid var(--sidebar-border);
     height: 100%;
     padding: 20px !important;
 }
@@ -227,13 +284,13 @@ position: relative;
 .highcharts-background {
     fill: transparent !important;
 }
+
 .pie-wrapper {
-  height: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 
 #pie-chart {
     width: 55%;
@@ -241,11 +298,9 @@ position: relative;
     min-width: 150px;
 }
 
-
 .legend-box {
     width: 50%;
     padding-left: 10px;
-    
 }
 
 .legend-item {
@@ -263,51 +318,42 @@ position: relative;
     margin-right: 8px;
 }
 
+/* Legend Colors */
 .color1 { background: #4b4bd4; }
 .color2 { background: #7b7be8; }
 .color3 { background: #a3a3f0; }
 .color4 { background: #5b5bc5; }
 .color5 { background: #6b6be2; }
 
-
-.recent-table thead th{
-font-size: 14px;
-color: #6b6b6b;
-background: #fafafa;
-border-bottom: 1px solid #eee;
+/* =========================
+   TABLES
+========================= */
+.recent-table thead th {
+    font-size: 14px;
+    color: #6b6b6b;
+    background: #fafafa;
+    border-bottom: 1px solid var(--sidebar-border);
 }
-.recent-table tbody tr{
-    border-radius: 1px solid  #f1f1f1;
-    }
+
+.recent-table tbody tr {
+    border-radius: 1px;
+    border: 1px solid #f1f1f1;
+}
+
 .recent-table tbody tr:hover {
     background: #f8f9fc;
 }
-.company-logo{
+
+.company-logo {
     width: 30px;
     height: 30px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-/* Search Box Small Size */
-.search-box {
-    background: #f5f5f5;
-    padding: 4px 10px;
-    border-radius: 10px;
-}
-
-.search-box .form-control {
-    border: none;
-    padding: 4px 6px;
-    height: 30px;
-    font-size: 14px;
-}
-
-.search-box i {
-    font-size: 14px;
-}
-
-/* Filter Button small */
+/* =========================
+   FILTER BUTTON
+========================= */
 .btn-filter-sm {
     padding: 4px 10px !important;
     height: 34px;
@@ -316,24 +362,31 @@ border-bottom: 1px solid #eee;
     justify-content: center;
 }
 
-/* ---------- MOBILE SIDEBAR ---------- */
+/* =========================
+   RESPONSIVE / MOBILE
+========================= */
 @media(max-width: 576px) {
+
     .sidebar {
         position: fixed;
         left: -260px;
         top: 0;
         height: 100%;
-        width: 260px;
+        width: var(--sidebar-width);
         z-index: 2000;
-        transition: left .3s ease;
+        transition: left 0.3s ease;
     }
-    
 
     .sidebar.show {
         left: 0;
     }
 
-    /* MAIN CONTENT BLUR/OVERLAY */
+    /* Main content width */
+    .main-content {
+        width: 100%;
+    }
+
+    /* Overlay */
     .overlay {
         position: fixed;
         inset: 0;
@@ -341,13 +394,9 @@ border-bottom: 1px solid #eee;
         z-index: 1500;
         display: none;
     }
+
     .overlay.show {
         display: block;
-    }
-
-    /* Fix layout */
-    .main-content {
-        width: 100%;
     }
 
     /* Cards full width */
@@ -355,7 +404,7 @@ border-bottom: 1px solid #eee;
         margin-bottom: 12px;
     }
 
-    /* Chart full width */
+    /* Charts full width */
     #application-chart,
     #pie-chart {
         width: 100% !important;

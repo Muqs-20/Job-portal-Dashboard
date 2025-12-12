@@ -165,31 +165,40 @@
             <div class="d-flex align-items-center">
 
                 <!-- Notification -->
-                <div class="notif position-relative me-4">
-                    <i class="bi bi-bell fs-5"></i>
-                    <span class="badge-dot"></span>
-                </div>
+               <div class="dropdown me-4">
+                 <div class="notif position-relative dropdown-toggle no-caret"
+                  data-bs-toggle="dropdown">
+                 <i class="bi bi-bell fs-5"></i>
+                 <span class="badge-dot"></span>
+               </div>
+               <ul class="dropdown-menu dropdown-menu-end shadow notif-menu">
+                <li class="dropdown-header fw-bold">Notifications</li>
+                <li><a class="dropdown-item" href="#">No new Applicants</a></li>
+                <li><a class="dropdown-item" href="#">No new Applicants</a></li>
+                </ul>
+               </div>
 
-                <!-- Profile Dropdown -->
                 <div class="dropdown">
-                    <a class="d-flex align-items-center text-decoration-none dropdown-toggle" 
-                       href="#" id="profileDropdown" data-bs-toggle="dropdown">
-                        <img src="assets/images/images.jpg" 
-                             class="user-img rounded-circle me-2" width="40" height="40">
-                        <div class="d-none d-sm-block">
-                            <h6 class="mb-0 fw-bold user-name">Muqaddas Bibi</h6>
-                            <span class="small text-muted">Super Admin</span>
-                        </div>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="profileDropdown">
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i> Profile</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i> Settings</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-envelope me-2"></i> Messages</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
-                    </ul>
-                </div>
+            <a class="d-flex align-items-center text-decoration-none dropdown-toggle no-caret"
+               href="#" id="profileDropdown" data-bs-toggle="dropdown">
 
+                <img src="assets/images/images.jpg"
+                     class="user-img rounded-circle me-2" width="40" height="40">
+
+                <div class="d-none d-sm-block">
+                    <h6 class="mb-0 fw-bold user-name">Muqaddas Bibi</h6>
+                    <span class="small text-muted">Super Admin</span>
+                </div>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-end shadow profile-menu">
+                <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i> Profile</a></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i> Settings</a></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-envelope me-2"></i> Messages</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+            </ul>
+        </div>
             </div>
 
         </nav>

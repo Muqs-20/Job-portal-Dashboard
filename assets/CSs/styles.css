@@ -35,23 +35,25 @@ body {
     padding-top: 20px;
     box-shadow: 0 2px 8px rgba(15, 15, 25, 0.02);
     transition: 0.3s ease;
+    min-height: 100vh;
+   
 }
 #collapse-btn {
-    background-color: #ffffff;        /* White background */
-    border: 1px solid #d9d9d9;        /* Light grey outline */
-    color: #555555;                   /* Dark grey icon */
+    background-color: #ffffff;        
+    border: 1px solid #d9d9d9;        
+    color: #555555;                   
     padding: 4px 6px;
-    border-radius: 8px;               /* Optional: nicer rounded look */
+    border-radius: 8px;               
 }
 
 #collapse-btn i {
-    color: #555555;                   /* Dark grey icon */
+    color: #555555;                  
     font-size: 1.1rem;
 }
 
 /* Hover effect */
 #collapse-btn:hover {
-    background-color: #f8f8f8;        /* Soft light grey hover */
+    background-color: #f8f8f8;        
     border-color: #cfcfcf;
 }
 
@@ -237,18 +239,19 @@ body {
 }
 /* DROPDOWN MENU DESIGN */
 .notif {
-    background: #f1f1f1;
-    padding: 8px;
+    background: #ffffff;
+    padding: 4px 8px;
     border-radius: 50%;
     cursor: pointer;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid #cccccc;
 }
 
 .notif:hover {
-    background: #e4e4e4;     /* slight darker hover effect */
+    background: #e4e4e4;   
 }
 
 .badge-dot {
